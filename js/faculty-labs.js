@@ -3,13 +3,11 @@
 // To add an entry, append an object to data/labs.json or data/faculty.json —
 // no changes needed here.
 
-const DEPARTMENT_ORDER = ["BME", "CS", "ECE", "MIE"];
+const DEPARTMENT_ORDER = ["CS", "Grad"];
 
 const DEPARTMENT_NAMES = {
-    BME: "Biomedical Engineering",
-    CS: "Computer Science",
-    ECE: "Electrical & Computer Engineering",
-    MIE: "Mechanical & Industrial Engineering"
+    CS: "Faculty",
+    Grad: "Graduate Students",
 };
 
 const groupByDepartment = entries => {

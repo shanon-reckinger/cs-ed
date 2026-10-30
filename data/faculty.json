@@ -4,5 +4,17 @@
         "department": "CS",
         "link": "https://cs.uic.edu/profiles/shanon-reckinger/",
         "image": "images/faculty/shanon-reckinger.jpg"
+    }, 
+    {
+        "name": "Gonzalo Bello",
+        "department": "CS",
+        "link": "https://cs.uic.edu/profiles/gonzalo-bello/",
+        "image": "images/faculty/gonzalo-bello.jpg"
+    }, 
+    {
+        "name": "Scott Reckinger",
+        "department": "CS",
+        "link": "https://cs.uic.edu/profiles/scott-reckinger/",
+        "image": "images/faculty/scott-reckinger.jpg"
     }
 ]
