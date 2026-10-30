@@ -124,27 +124,24 @@ const renderFaculty = faculty => {
     });
 };
 
-Promise.all([
-    fetch("data/labs.json").then(r => {
-        if (!r.ok) throw new Error("Could not load lab data.");
-        return r.json();
-    }),
-    fetch("data/faculty.json").then(r => {
-        if (!r.ok) throw new Error("Could not load faculty data.");
-        return r.json();
+fetch("data/faculty.json")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Could not load faculty data.");
+        }
+        return response.json();
     })
-])
-    .then(([labs, faculty]) => {
-        renderLabs(labs);
-        renderFaculty(faculty);
-    })
+    .then(faculty => renderFaculty(faculty))
     .catch(error => {
         console.error(error);
 
-        ["labs-directory", "faculty-directory"].forEach(id => {
-            const container = document.getElementById(id);
-            if (container) {
-                container.innerHTML = `<p class="empty-state">This information is currently unavailable.</p>`;
-            }
-        });
-    });
+        const container =
+            document.getElementById("faculty-directory");
+
+        if (container) {
+            container.innerHTML =
+                `<p class="empty-state">
+                    Faculty information is currently unavailable.
+                </p>`;
+        }
+});

@@ -12,13 +12,12 @@
     --uic-cloud: #edf2f8;
     --uic-slate: #56687f;
     --uic-dark: #1d2430;
-    --terracotta: #B85C38;
-    --forest-green: #526B50;
+    --forest-green: #696B50;
     --ochre: #C28B55;
     --warm-brown: #79604A;
+    --terracotta: #A85F40;
     --charcoal: #343C35;
     --linen: #EAE4D8;
-}
 
 html {
     scroll-behavior: smooth;
@@ -31,7 +30,7 @@ body {
 }
 
 .uic-navbar {
-    background: linear-gradient(90deg, var(--charcoal) 0%, var(--ochre) 100%);
+    background: var(--forest-green);
     box-shadow: 0 2px 14px rgba(8, 29, 66, 0.14);
 }
 
