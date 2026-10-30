@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Computer Science Education @ UIC</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark uic-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                Robotics Research Community @ UIC
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">News</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero d-flex align-items-center">
+        <div class="container text-white">
+
+            <h1 class="display-3 fw-bold">
+                Computer Science Education at UIC
+            </h1>
+
+            <p class="lead mt-4">
+                Elevating engagement and closing gaps in achievement.  
+            </p>
+
+            <div class="mt-4">
+                <a href="#seminars" class="btn btn-light btn-lg me-3">
+                    Upcoming Seminars
+                </a>
+
+                <a href="https://groups.google.com/g/uic-robotics" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-lg">
+                    Join the Mailing List
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- <section id="seminars" class="seminars-section py-5">
+        <div class="seminar-hero">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end mb-4">
+                    <div>
+                        <span class="section-label section-label-light">Featured</span>
+                        <h2 class="fw-bold mt-2 text-white">Upcoming Seminars</h2>
+                    </div>
+
+                    <a href="#seminars" class="btn btn-light btn-outline-light text-dark border-0">
+                        See Full Schedule
+                    </a>
+                </div>
+
+                <div class="talk-slider-wrapper">
+                    <button class="talk-slider-btn talk-slider-prev" type="button" aria-label="Previous talk">
+                        ←
+                    </button>
+
+                    <div class="talk-slider">
+                        <div class="talk-track" id="coming-talk-list"></div>
+                    </div>
+
+                    <button class="talk-slider-btn talk-slider-next" type="button" aria-label="Next talk">
+                        →
+                    </button>
+                </div>
+
+                <div class="talk-slider-dots" id="talk-slider-dots" aria-label="Speaker navigation"></div>
+            </div>
+        </div> -->
+    <!-- </section> -->
+
+    <section id="mission" class="mission-section py-5">
+        <div class="container">
+            <div class="row g-5 align-items-start">
+
+                <div class="col-lg-4">
+                    <span class="section-label">Our Community</span>
+                    <h2 class="fw-bold mt-2">Our Mission</h2>
+
+                    <p class="mission-text mt-3">
+                        Foster a vibrant robotics research community at UIC
+                        that advances knowledge, supports collaboration, and
+                        creates real-world impact.
+                    </p>
+                </div>
+
+                <div class="col-lg-8">
+                    <span class="section-label">What We Do</span>
+
+                    <div class="row g-4 mt-1">
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="feature-card">
+                                <h3>Seminars</h3>
+                                <p>
+                                    Biweekly talks featuring students,
+                                    faculty, and invited speakers.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="feature-card">
+                                <h3>Collaboration</h3>
+                                <p>
+                                    Connect researchers across laboratories
+                                    and disciplines.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="feature-card">
+                                <h3>Research</h3>
+                                <p>
+                                    Highlight innovative robotics research
+                                    across UIC.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="feature-card">
+                                <h3>Students</h3>
+                                <p>
+                                    Give graduate students opportunities to
+                                    present and connect.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="labs" class="labs-section py-5">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-end mb-4">
+                <div>
+                    <span class="section-label">Explore UIC Robotics</span>
+                    <h2 class="fw-bold mt-2">Featured Research Labs</h2>
+                </div>
+
+                <a href="faculty-labs.html" class="btn btn-outline-danger">
+                    View All Faculty &amp; Labs
+                </a>
+            </div>
+
+            <div class="lab-carousel">
+                <button class="lab-carousel-btn lab-carousel-prev" type="button" aria-label="Scroll to previous labs">
+                    ←
+                </button>
+
+                <div class="lab-carousel-viewport">
+                    <div class="lab-carousel-track" id="lab-carousel-track"></div>
+                </div>
+
+                <button class="lab-carousel-btn lab-carousel-next" type="button" aria-label="Scroll to next labs">
+                    →
+                </button>
+            </div>
+
+            <p class="lab-carousel-footnote">
+                Showing a preview —
+                <a href="faculty-labs.html">view the full Faculty &amp; Research Labs directory</a>.
+            </p>
+        </div>
+    </section>
+
+    <section id="join" class="join-section py-5">
+        <div class="container">
+            <div class="join-box">
+                <div class="row align-items-center g-4">
+
+                    <div class="col-lg-8">
+                        <span class="section-label">Get Involved</span>
+
+                        <h2 class="fw-bold mt-2">
+                            Join the Robotics Research Community
+                        </h2>
+
+                        <p class="mb-0">
+                            Faculty, students, research laboratories, and invited
+                            speakers are welcome to participate in our online seminars
+                            and community activities. Zoom links are sent to members of
+                            the mailing list.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="https://groups.google.com/g/uic-robotics"
+                        target="_blank" rel="noopener noreferrer"
+                        class="btn btn-light btn-lg">
+                            Join the Mailing List
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Our JavaScript -->
+<script src="js/main.js"></script>
+<script src="js/labs-carousel.js"></script>
+
+</body>
+</html>

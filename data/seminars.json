@@ -1,0 +1,42 @@
+[
+    {
+        "date": "September 2, 2026",
+        "time": "11:00 AM",
+        "location": "CDRLC 1422 and Online — Zoom link sent to mailing list subscribers",
+        "speaker": "Mark Draelos",
+        "speakerBio": "Mark Draelos is an Assistant Professor at the University of Michigan with a joint appointment between Robotics and Ophthalmology & Visual Sciences and a courtesy appointment in Biomedical Engineering. He has doctoral degrees in engineering and medicine through the Duke University Medical Scientist Training Program and worked as a physician during an intensive year-long surgical internship that coincided with the early COVID pandemic. His lab studies medical robotics and develops advanced intelligent tools to aid healthcare providers in diagnosing and treating disease, especially in microsurgical specialties like ophthalmology. His work has received recognition and support through the NIH Pathway to Independence Award (K99/R00) and the NIH Director's New Innovator Award (DP2).",
+        "title": "Robots for Expanding Access to High-Quality Eye Exams",
+        "topic": "Regular, high-quality eye exams are essential for maintaining ocular health. Optical coherence tomography (OCT) has emerged as the medical imaging modality of choice for obtaining quantitative 3D scans of the eye for this purpose. Unfortunately, OCT is difficult to perform and exquisitely sensitive to eye motion, requiring trained ophthalmic photographers in specialty clinics and mechanical stabilization of the patient's head. These barriers reduce access to high-quality OCT in the community and preclude imaging in patient populations with restricted mobility. In this talk, I will describe our work to automate and streamline OCT eye exams with robotic imaging systems. This strategy reduces operator skill requirements, adapts to the patient's positioning capabilities, and accommodates large-scale head and eye movement. I will describe our technical approach and show human imaging results in routine and challenge settings.",
+        "image": "images/speakers/square-crop-mark.jpg"
+    },
+    {
+        "date": "September 9, 2026",
+        "time": "11:00 AM",
+        "location": "CDRLC 1422 and Online — Zoom link sent to mailing list subscribers",
+        "speaker": "Matthew Walter",
+        "speakerBio": "Matthew R. Walter is an associate professor at the Toyota Technological Institute at Chicago (TTIC). His interests revolve around the realization of intelligent, perceptually aware robots that are able to act robustly and effectively in unstructured environments, particularly with and alongside people. His research focuses on machine learning-based solutions that allow robots to learn to understand and interact with the people, places, and objects in their surroundings. Matthew has investigated these areas in the context of various robotic platforms, including autonomous underwater vehicles, self-driving cars, voice-commandable wheelchairs, mobile manipulators, and autonomous cars for (rubber) ducks. Matthew obtained his Ph.D. from the Massachusetts Institute of Technology and the Woods Hole Oceanographic Institution, where his thesis focused on improving the efficiency of inference for simultaneous localization and mapping.",
+        "title": "Robot Learning from Suboptimal Demonstrations to Action-Free Videos",
+        "topic": "Reinforcement learning (RL) has shown promising performance across a variety of complex domains; however, its high sample complexity limits broader application — particularly in real-world, sparse reward settings. In this talk, I will describe a body of work that addresses this challenge by drawing on demonstrations and, increasingly, raw action-free video, an abundant and underexplored source of supervision for robot learning. I will begin by presenting a class of imitation learning algorithms capable of directly learning from demonstrations, even when they are suboptimal. Key to these algorithms is their ability to adaptively determine when and how to rely on different demonstrators, and to transition from imitation- to reinforcement-based learning, enabling the learner to outperform the demonstrators. I will then describe work that learns a task-agnostic, progress-based reward function from action-free video demonstrations — without access to action labels or manually specified rewards. Pretrained on large-scale egocentric human videos, this reward model generalizes across tasks and even across embodiments, supporting goal-conditioned policy learning from the large-scale, uncurated video data available on the internet. Finally, I will present very recent work that takes advantage of action-free visual demonstrations to learn a world model jointly with continuous latent action representations. By leveraging adversarial regularization and diffusion-based video generation, this approach learns structured, semantically meaningful action representations that support both imitation learning from observation and goal-directed planning.",
+        "image": "images/speakers/square-crop-matthew.jpg"
+    },
+    {
+        "date": "September 30, 2026",
+        "time": "11:00 AM",
+        "location": "CDRLC 1422 and Online — Zoom link sent to mailing list subscribers",
+        "speaker": "Nelson Rosa",
+        "speakerBio": "Nelson Rosa is a roboticist specializing in hybrid dynamical systems, legged locomotion, and model-based methods for bipedal robots. His research spans robotics, dynamics, embedded/computer systems, and algorithmic design, with particular expertise in gait generation and analysis for underactuated walking systems. He received his Ph.D. in Mechanical Engineering from Northwestern University and was a Humboldt Postdoctoral Research Fellow.",
+        "title": "There's Plenty of Room at the Bottom: Rethinking Trajectory Optimization Libraries for Robotics",
+        "topic": "Many problems in robotics are ultimately formulated and solved as trajectory optimization problems, making trajectory optimization a cornerstone of robotics research. To simplify the task of formulating and solving such problems, robotics-focused trajectory optimization libraries (TOLs) continue to be published in an increasingly crowded software landscape. Despite the growing number, most libraries share common design choices: they are predominantly implemented in an object-oriented programming (OOP) paradigm and often have their own custom modeling and solver interfaces. As an alternative, these libraries could draw on software design principles from declarative algebraic modeling languages (AMLs), which have had a transformative impact on software platforms in operations research. In this talk, I will present a case study comparing a representative OOP-based TOL to our implementation in an AML. The aim is to explore how programming paradigms influence library design, reproducibility, and solver performance. With this case study as motivation, I will then discuss opportunities for modernizing software design in robotics-focused trajectory optimization with the aim of making libraries more performant, reproducible, and easier to maintain. The goal is to show that even in the age of AI, there remains substantial room for academic-led innovation at the bottom layers of the robotics software stack.",
+        "image": "images/speakers/square-crop-nelson.jpg"
+    },
+    {
+        "date": "November 11, 2026",
+        "time": "11:00 AM",
+        "location": "CDRLC 1422 and Online — Zoom link sent to mailing list subscribers",
+        "speaker": "Vince Kurtz",
+        "speakerBio": "Vince Kurtz is an assistant professor at DePaul's School of Computing. His research focuses on planning, simulation, and control of high-degree-of-freedom robots, with the long-term goal of enabling new tools that amplify human capabilities. He is particularly interested in techniques that enable safe and reliable contact-rich interactions with the environment, as well as methods that generalize across legged locomotion and dexterous manipulation tasks.",
+        "title": "TBD",
+        "topic": "Coming soon!",
+        "image": "images/speakers/square-crop-vince.jpg"
+    }
+]
