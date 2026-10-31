@@ -824,3 +824,146 @@ body {
     font-size: 1.05rem;
     line-height: 1.7;
 }
+
+/* News Timeline */
+
+.news-section {
+    padding: 5rem 0;
+    background: #EAE4D8;
+}
+
+.news-header {
+    margin-bottom: 3rem;
+}
+
+.news-section .section-label {
+    color: #696B50;
+}
+
+.news-intro {
+    max-width: 680px;
+    color: #79604A;
+    line-height: 1.7;
+}
+
+.timeline-year {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #696B50;
+    margin: 3rem 0 1.5rem;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 115px 24px 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-date {
+    text-align: right;
+    padding-top: 1.25rem;
+    color: #79604A;
+    font-weight: 600;
+}
+
+.timeline-date span {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.timeline-marker {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.timeline-marker::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: -1.5rem;
+    width: 2px;
+    background: #B9B9A2;
+}
+
+.timeline-marker::after {
+    content: "";
+    position: relative;
+    z-index: 1;
+    margin-top: 1.4rem;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #A85F40;
+    border: 3px solid #EAE4D8;
+    box-shadow: 0 0 0 2px #A85F40;
+}
+
+.timeline-item:last-child .timeline-marker::before {
+    bottom: 0;
+}
+
+.timeline-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.5rem;
+    border: 1px solid rgba(52, 60, 53, 0.08);
+    box-shadow: 0 5px 18px rgba(52, 60, 53, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(52, 60, 53, 0.10);
+}
+
+.timeline-category {
+    color: #696B50;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.timeline-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #343C35;
+}
+
+.timeline-card p {
+    color: #555D53;
+    line-height: 1.65;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #A85F40;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.timeline-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .timeline-item {
+        grid-template-columns: 65px 18px 1fr;
+        gap: 0.5rem;
+    }
+
+    .timeline-date {
+        font-size: 0.85rem;
+    }
+
+    .timeline-card {
+        padding: 1rem;
+    }
+}
+}

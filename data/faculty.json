@@ -12,6 +12,12 @@
         "image": "images/faculty/gonzalo-bello.jpg"
     }, 
     {
+        "name": "Mitch Theys",
+        "department": "CS",
+        "link": "https://cs.uic.edu/profiles/mitchell-theys/",
+        "image": "images/faculty/mitch-theys.jpg"
+    },
+    {
         "name": "Scott Reckinger",
         "department": "CS",
         "link": "https://cs.uic.edu/profiles/scott-reckinger/",
