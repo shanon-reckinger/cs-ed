@@ -952,18 +952,34 @@ body {
     text-decoration: underline;
 }
 
+.timeline-card-content {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+.timeline-photo {
+    width: 125px;
+    height: 110px;
+    flex: 0 0 125px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.timeline-text {
+    flex: 1;
+    min-width: 0;
+}
+
 @media (max-width: 600px) {
-    .timeline-item {
-        grid-template-columns: 65px 18px 1fr;
-        gap: 0.5rem;
+    .timeline-card-content {
+        gap: 0.75rem;
     }
 
-    .timeline-date {
-        font-size: 0.85rem;
-    }
-
-    .timeline-card {
-        padding: 1rem;
+    .timeline-photo {
+        width: 85px;
+        height: 85px;
+        flex-basis: 85px;
     }
 }
 }

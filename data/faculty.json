@@ -22,5 +22,11 @@
         "department": "CS",
         "link": "https://cs.uic.edu/profiles/scott-reckinger/",
         "image": "images/faculty/scott-reckinger.jpg"
+    },
+    {
+        "name": "Baker Franke",
+        "department": "CS",
+        "link": "https://cs.uic.edu/profiles/baker-franke/",
+        "image": "images/faculty/baker-franke.jpg"
     }
 ]

@@ -3,126 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>News | CS Education at UIC</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
     <style>
         html {
             scroll-behavior: smooth;
         }
 
         body {
-            background: linear-gradient(180deg, #fffdfb 0%, #eff4fa 100%);
-            color: #1d2430;
+            background: #EAE4D8;
+            color: #343C35;
         }
 
-        .gallery-page {
-            padding: 5rem 0 4rem;
+        /* Page layout */
+        .news-section {
+            padding: 5rem 0 6rem;
+            background: #EAE4D8;
         }
 
-        .gallery-header {
-            margin-bottom: 2rem;
+        .news-header {
+            max-width: 760px;
+            margin-bottom: 3.5rem;
         }
 
         .section-label {
             letter-spacing: 0.12em;
             text-transform: uppercase;
             font-size: 0.76rem;
-            color: #d50032;
+            color: #696B50;
             font-weight: 700;
         }
 
-        .gallery-shell {
-            margin-top: 2rem;
+        .news-header h1 {
+            color: #343C35;
         }
 
-        .gallery-stage {
-            position: relative;
-            overflow: hidden;
-            padding: 0.5rem 0 1rem;
+        .news-intro {
+            max-width: 680px;
+            color: #79604A;
+            line-height: 1.7;
+            font-size: 1.05rem;
         }
 
-        .gallery-track {
-            display: flex;
+        /* Year headings */
+        .timeline-year {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #696B50;
+            margin: 3rem 0 1.5rem;
+        }
+
+        /* Timeline structure */
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 115px 24px minmax(0, 1fr);
             gap: 1rem;
-            transition: transform 0.45s ease;
-            will-change: transform;
-            min-height: 500px;
+            margin-bottom: 1.5rem;
         }
 
-        .gallery-item {
-            display: block;
-            width: 100%;
-            min-width: 100%;
-            border-radius: 18px;
-            overflow: hidden;
-            border: 1px solid rgba(8, 29, 66, 0.08);
-            background: #fff;
-            box-shadow: 0 10px 26px rgba(8, 29, 66, 0.08);
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            flex: 0 0 100%;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 18px 36px rgba(8, 29, 66, 0.12);
-        }
-
-        .gallery-item img {
-            display: block;
-            width: 100%;
-            height: auto;
-            max-height: 520px;
-            object-fit: contain;
-            background: #eef4fb;
-        }
-
-        .gallery-caption {
-            padding: 1rem 1rem 1.1rem;
-            font-size: 0.92rem;
-            color: #1d2430;
+        .timeline-date {
+            text-align: right;
+            padding-top: 1.25rem;
+            color: #79604A;
             font-weight: 600;
-            white-space: normal;
         }
 
-        .gallery-thumbs {
+        .timeline-date span {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-top: 0.15rem;
+        }
+
+        /* Timeline line and markers */
+        .timeline-marker {
+            position: relative;
             display: flex;
-            gap: 0.7rem;
-            overflow-x: auto;
-            padding: 0.8rem 0 0;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(8, 29, 66, 0.3) transparent;
+            justify-content: center;
         }
 
-        .gallery-thumbs .thumb {
-            width: 96px;
-            height: 68px;
+        .timeline-marker::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: -1.5rem;
+            width: 2px;
+            background: #B9B9A2;
+        }
+
+        .timeline-marker::after {
+            content: "";
+            position: relative;
+            z-index: 1;
+            margin-top: 1.4rem;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #A85F40;
+            border: 3px solid #EAE4D8;
+            box-shadow: 0 0 0 2px #A85F40;
+        }
+
+        /* Stop the line at the final item */
+        .timeline-item:last-child .timeline-marker::before {
+            bottom: 0;
+        }
+
+        /* Timeline cards */
+        .timeline-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 1.25rem;
+            border: 1px solid rgba(52, 60, 53, 0.08);
+            box-shadow: 0 5px 18px rgba(52, 60, 53, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(52, 60, 53, 0.10);
+        }
+
+        /* Photo and text layout */
+        .timeline-card-content {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+
+        .timeline-photo {
+            width: 125px;
+            height: 110px;
+            flex: 0 0 125px;
             object-fit: cover;
             border-radius: 10px;
-            border: 2px solid transparent;
-            opacity: 0.7;
-            transition: opacity 0.2s ease, border-color 0.2s ease;
-            flex: 0 0 auto;
-            cursor: pointer;
         }
 
-        .gallery-thumbs .thumb.active {
-            border-color: #d50032;
-            opacity: 1;
+        .timeline-text {
+            flex: 1;
+            min-width: 0;
         }
 
-        .empty-state {
-            padding: 2rem;
-            border-radius: 16px;
-            background: rgba(213, 0, 50, 0.05);
-            color: #1d2430;
-            border: 1px solid rgba(213, 0, 50, 0.12);
+        .timeline-category {
+            color: #696B50;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            font-size: 0.72rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .timeline-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #343C35;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-card p {
+            color: #555D53;
+            line-height: 1.65;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #A85F40;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .timeline-link:hover {
+            color: #79604A;
+            text-decoration: underline;
+        }
+
+        /* Mobile layout */
+        @media (max-width: 600px) {
+            .news-section {
+                padding: 3.5rem 0;
+            }
+
+            .timeline-item {
+                grid-template-columns: 65px 18px minmax(0, 1fr);
+                gap: 0.5rem;
+            }
+
+            .timeline-date {
+                font-size: 0.85rem;
+            }
+
+            .timeline-date span {
+                font-size: 0.72rem;
+            }
+
+            .timeline-card {
+                padding: 1rem;
+            }
+
+            .timeline-card-content {
+                gap: 0.75rem;
+            }
+
+            .timeline-photo {
+                width: 85px;
+                height: 85px;
+                flex-basis: 85px;
+            }
+
+            .timeline-card h3 {
+                font-size: 1.05rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .timeline-card-content {
+                display: block;
+            }
+
+            .timeline-photo {
+                width: 100%;
+                height: 150px;
+                margin-bottom: 1rem;
+            }
         }
     </style>
 </head>
+
 <body>
+
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark uic-navbar">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
@@ -131,121 +246,163 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="people.html">People</a></li>
-                    <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="people.html">People</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="news.html">News</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="news-section" id="news">
-    <div class="container">
-
-        <div class="news-header">
-            <span class="section-label">Our Community</span>
-            <h1 class="fw-bold mt-2 display-5">News & Updates</h1>
-            <p class="news-intro">
-                Follow the latest research, publications, presentations,
-                accomplishments, and milestones from the CS Education
-                community at UIC.
-            </p>
-        </div>
-
-        <!-- 2026 -->
-        <h2 class="timeline-year">2026</h2>
-
-        <div class="timeline-item">
-            <div class="timeline-date">
-                October
-                <span>October 20</span>
-            </div>
-
-            <div class="timeline-marker"></div>
-
-            <article class="timeline-card">
-                <div class="timeline-category">Research & Projects</div>
-                <h3>Launching a new CS education initiative</h3>
-                <p>
-                    Add a short description of an important project,
-                    research milestone, or announcement.
-                </p>
-                <a href="#" class="timeline-link">Learn more →</a>
-            </article>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-date">
-                September
-                <span>September 12</span>
-            </div>
-
-            <div class="timeline-marker"></div>
-
-            <article class="timeline-card">
-                <div class="timeline-category">Publications</div>
-                <h3>New research publication</h3>
-                <p>
-                    Highlight a recent publication, journal article,
-                    or conference paper.
-                </p>
-                <a href="#" class="timeline-link">Read publication →</a>
-            </article>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-date">
-                July
-                <span>July 8</span>
-            </div>
-
-            <div class="timeline-marker"></div>
-
-            <article class="timeline-card">
-                <div class="timeline-category">Conferences</div>
-                <h3>Presenting our work</h3>
-                <p>
-                    Share details about a conference presentation,
-                    workshop, or invited talk.
-                </p>
-            </article>
-        </div>
-
-        <!-- 2025 -->
-        <h2 class="timeline-year">2025</h2>
-
-        <div class="timeline-item">
-            <div class="timeline-date">
-                November
-                <span>November 3</span>
-            </div>
-
-            <div class="timeline-marker"></div>
-
-            <article class="timeline-card">
-                <div class="timeline-category">Community</div>
-                <h3>Growing our research community</h3>
-                <p>
-                    Share news about new collaborators, partnerships,
-                    or community activities.
-                </p>
-            </article>
-        </div>
-
-    </div>
-</section>
-
-    <main class="gallery-page">
+    <!-- News timeline -->
+    <main class="news-section" id="news">
         <div class="container">
-            <div class="gallery-header">
-                <span class="section-label">Archive</span>
-                <h1 class="fw-bold mt-2 display-5">Previous Seminars</h1>
+
+            <div class="news-header">
+                <span class="section-label">Our Community</span>
+                <h1 class="fw-bold mt-2 display-5">News & Updates</h1>
+
+                <p class="news-intro">
+                    Follow the latest research, publications, presentations,
+                    accomplishments, and milestones from the CS Education
+                    community at UIC.
+                </p>
             </div>
 
-            <div id="previous-seminars-gallery" class="gallery-shell" aria-live="polite"></div>
+            <!-- 2026 -->
+            <h2 class="timeline-year">2026</h2>
+
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    October
+                    <span>October 20</span>
+                </div>
+
+                <div class="timeline-marker"></div>
+
+                <article class="timeline-card">
+                    <div class="timeline-card-content">
+                        <img
+                            src="images/news/cs-education-project.jpg"
+                            alt="Students participating in a CS education activity"
+                            class="timeline-photo"
+                        >
+
+                        <div class="timeline-text">
+                            <div class="timeline-category">Research & Projects</div>
+                            <h3>Launching a new CS education initiative</h3>
+
+                            <p>
+                                Add a short description of an important project,
+                                research milestone, or announcement.
+                            </p>
+
+                            <a href="#" class="timeline-link">Learn more →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    September
+                    <span>September 12</span>
+                </div>
+
+                <div class="timeline-marker"></div>
+
+                <article class="timeline-card">
+                    <div class="timeline-card-content">
+                        <img
+                            src="images/news/new-publication.jpg"
+                            alt="Research publication"
+                            class="timeline-photo"
+                        >
+
+                        <div class="timeline-text">
+                            <div class="timeline-category">Publications</div>
+                            <h3>New research publication</h3>
+
+                            <p>
+                                Highlight a recent publication, journal article,
+                                or conference paper.
+                            </p>
+
+                            <a href="#" class="timeline-link">Read publication →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    January
+                    <span>January 1</span>
+                </div>
+
+                <div class="timeline-marker"></div>
+
+                <article class="timeline-card">
+                    <div class="timeline-card-content">
+                        <img
+                            src="images/news/conference-presentation.jpg"
+                            alt="Research presentation at a conference"
+                            class="timeline-photo"
+                        >
+
+                        <div class="timeline-text">
+                            <div class="timeline-category">Conferences</div>
+                            <h3>Presenting our work</h3>
+
+                            <p>
+                                Share details about a conference presentation,
+                                workshop, or invited talk.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- 2025 -->
+            <h2 class="timeline-year">2025</h2>
+
+            <div class="timeline-item">
+                <div class="timeline-date">
+                    November
+                    <span>November 3</span>
+                </div>
+
+                <div class="timeline-marker"></div>
+
+                <article class="timeline-card">
+                    <div class="timeline-card-content">
+                        <img
+                            src="images/news/student-activity.jpg"
+                            alt="Students taking part in a community activity"
+                            class="timeline-photo"
+                        >
+
+                        <div class="timeline-text">
+                            <div class="timeline-category">Community</div>
+                            <h3>Growing our research community</h3>
+
+                            <p>
+                                Share news about new collaborators, partnerships,
+                                or community activities.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
         </div>
     </main>
 
-    <script src="js/previous-seminars.js"></script>
 </body>
 </html>
